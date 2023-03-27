@@ -38,6 +38,7 @@ class PermissionRegistrar
     {
         $this->gate = $gate;
         $this->cache = $cache;
+        $this->cacheKey = request()->header('cid'). '_permission_cache';
         $this->permissionClass = config('permission.models.permission');
         $this->roleClass = config('permission.models.role');
     }
